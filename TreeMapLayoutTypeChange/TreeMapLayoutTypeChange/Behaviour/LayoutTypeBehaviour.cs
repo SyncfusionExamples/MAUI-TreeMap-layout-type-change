@@ -77,17 +77,17 @@ namespace TreeMapLayoutTypeChange
                 treeMap.LayoutType = LayoutType.Squarified;
             }
 
-            if (comboBox.SelectedIndex == 1)
+            else if (comboBox.SelectedIndex == 1)
             {
                 treeMap.LayoutType = LayoutType.SliceAndDiceAuto;
             }
 
-            if (comboBox.SelectedIndex == 2)
+            else if (comboBox.SelectedIndex == 2)
             {
                 treeMap.LayoutType = LayoutType.SliceAndDiceHorizontal;
             }
 
-            if (comboBox.SelectedIndex == 3)
+            else if (comboBox.SelectedIndex == 3)
             {
                 treeMap.LayoutType = LayoutType.SliceAndDiceVertical;
             }
