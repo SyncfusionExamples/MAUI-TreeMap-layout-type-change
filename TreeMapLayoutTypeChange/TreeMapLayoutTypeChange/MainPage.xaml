@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:treemap="clr-namespace:Syncfusion.Maui.TreeMap;assembly=Syncfusion.Maui.TreeMap"
+             xmlns:editors="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inputs"
+             xmlns:local="clr-namespace:TreeMapLayoutTypeChange"
+             x:Class="TreeMapLayoutTypeChange.MainPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="0.85*" />
+            <RowDefinition Height="0.15*" />
+        </Grid.RowDefinitions>
+
+        <Label Text="American Countries Ordered by Population - 2023"
+               Grid.Row="0"
+               VerticalTextAlignment="Center"
+               HorizontalTextAlignment="Center"
+               FontSize="14"
+               Padding="3"
+               FontAttributes="Bold" />
+
+        <editors:SfComboBox x:Name="comboBox"
+                            Grid.Row="2"
+                            WidthRequest="250"
+                            HeightRequest="50"
+                            DisplayMemberPath="Name"
+                            TextMemberPath="Name"
+                            SelectionChanged="comboBox_SelectionChanged"
+                            SelectedIndex="0"
+                            ItemsSource="{Binding LayoutType}">
+            <editors:SfComboBox.BindingContext>
+                <local:LayoutTypeViewModel />
+            </editors:SfComboBox.BindingContext>
+        </editors:SfComboBox>
+
+        <treemap:SfTreeMap x:Name="treeMap"
+                           Margin="8"
+                           Grid.Row="1"
+                           DataSource="{Binding PopulationDetails}"
+                           LayoutType="SliceAndDiceHorizontal"
+                           PrimaryValuePath="Population"
+                           ShowToolTip="True">
+            <treemap:SfTreeMap.BindingContext>
+                <local:PopulationViewModel />
+            </treemap:SfTreeMap.BindingContext>
+            <treemap:SfTreeMap.LeafItemSettings>
+                <treemap:TreeMapLeafItemSettings LabelPath="Country">
+                </treemap:TreeMapLeafItemSettings>
+            </treemap:SfTreeMap.LeafItemSettings>
+            <treemap:SfTreeMap.LeafItemBrushSettings>
+                <treemap:TreeMapUniformBrushSettings Brush="#D21243" />
+            </treemap:SfTreeMap.LeafItemBrushSettings>
+        </treemap:SfTreeMap>
+
+    </Grid>
+
+    <ContentPage.Behaviors>
+        <local:LayoutTypeBehaviour />
+    </ContentPage.Behaviors>
+
+</ContentPage>
