@@ -4,6 +4,8 @@ public class PopulationDetails
 {
     public PopulationDetails()
     {
+        Country = string.Empty;
+        Continent = string.Empty;
     }
 
     /// <summary>

@@ -1,5 +1,4 @@
 using System.Collections.ObjectModel;
-using TreeMapLayoutTypeChange;
 
 namespace TreeMapLayoutTypeChange;
 
@@ -9,7 +8,7 @@ namespace TreeMapLayoutTypeChange;
 public class PopulationViewModel
 {
     /// <summary>
-    /// Initializes a new instance of the <see cref="PopulationViewModel"/> class.
+    /// Initializes a new instance of the <see cref="PopulationDetails"/> class.
     /// </summary>
     public PopulationViewModel()
 	{

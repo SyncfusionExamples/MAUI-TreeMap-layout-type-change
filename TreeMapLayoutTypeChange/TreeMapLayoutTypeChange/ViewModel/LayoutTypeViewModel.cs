@@ -13,7 +13,7 @@ public class LayoutTypeViewModel
     public ObservableCollection<LayoutTypes> LayoutType { get; set; }
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="LayoutTypeViewModel"/> class.
+    /// Initializes a new instance of the <see cref="LayoutTypes"/> class.
     /// </summary>
     public LayoutTypeViewModel()
 	{
