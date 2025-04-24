@@ -22,6 +22,7 @@
                FontAttributes="Bold" />
 
         <editors:SfComboBox x:Name="comboBox"
+                            x:DataType="local:LayoutTypeViewModel"
                             Grid.Row="2"
                             WidthRequest="250"
                             HeightRequest="50"
@@ -36,6 +37,7 @@
         </editors:SfComboBox>
 
         <treemap:SfTreeMap x:Name="treeMap"
+                           x:DataType="local:PopulationViewModel"
                            Margin="8"
                            Grid.Row="1"
                            DataSource="{Binding PopulationDetails}"

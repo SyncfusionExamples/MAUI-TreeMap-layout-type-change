@@ -4,6 +4,7 @@ public class LayoutTypes
 {
 	public LayoutTypes()
 	{
+		Name = string.Empty;
 	}
 
 	/// <summary>

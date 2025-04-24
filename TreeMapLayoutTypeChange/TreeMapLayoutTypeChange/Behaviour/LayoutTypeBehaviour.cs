@@ -72,22 +72,27 @@ namespace TreeMapLayoutTypeChange
         /// <param name="e">The event args.</param>
         private void OnComboBoxSelectionChanged(object? sender, Syncfusion.Maui.Inputs.SelectionChangedEventArgs e)
         {
-            if (comboBox.SelectedIndex == 0)
+            if(treeMap == null)
+            {
+                return;
+            }
+
+            if (comboBox?.SelectedIndex == 0)
             {
                 treeMap.LayoutType = LayoutType.Squarified;
             }
 
-            else if (comboBox.SelectedIndex == 1)
+            else if (comboBox?.SelectedIndex == 1)
             {
                 treeMap.LayoutType = LayoutType.SliceAndDiceAuto;
             }
 
-            else if (comboBox.SelectedIndex == 2)
+            else if (comboBox?.SelectedIndex == 2)
             {
                 treeMap.LayoutType = LayoutType.SliceAndDiceHorizontal;
             }
 
-            else if (comboBox.SelectedIndex == 3)
+            else if (comboBox?.SelectedIndex == 3)
             {
                 treeMap.LayoutType = LayoutType.SliceAndDiceVertical;
             }
